@@ -15,4 +15,3 @@ song_collection = db["songs"]
 playlist_collection = db["playlists"]
 
 
-# uvicorn main:app --reload

@@ -6,4 +6,4 @@ def user_serializer(user) -> dict:
 }
 
 def users_serializer(users) -> list:
-    return [print(user_serializer(user)) for user in users]
+    return [user_serializer(user) for user in users]

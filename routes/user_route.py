@@ -1,7 +1,10 @@
 from fastapi import APIRouter
-from models.user_model import User
-from schemas.user_schema import users_serializer
 from bson import ObjectId
+
+from models.user_model import User
+
+from schemas.user_schema import users_serializer
+
 from db.database import user_collection
 
 user = APIRouter()
