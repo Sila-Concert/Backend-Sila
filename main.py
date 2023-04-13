@@ -1,15 +1,12 @@
-from typing import Union
-
 from fastapi import FastAPI
+from routes.user_route import user
+
+# uvicorn main:app --reload
 
 app = FastAPI()
 
+app.include_router(user, prefix="/user", tags=["User"])
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+async def home():
+    return {"message": "Hello World"}
