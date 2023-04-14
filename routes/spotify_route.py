@@ -18,7 +18,6 @@ class SpotifyImage(BaseModel):
     height: int
     width: int
     url: str
-    
 
 class SpotifyAlbum(BaseModel):
     name: str
@@ -27,13 +26,11 @@ class SpotifyAlbum(BaseModel):
     images: List[SpotifyImage]
     release_date: str
 
-
 class SpotifyTrack(BaseModel):
     name: str
     id: str
     album: SpotifyAlbum
     popularity: int
-
 
 class SpotifyArtist(BaseModel):
     name: str
@@ -44,7 +41,6 @@ class SpotifyArtist(BaseModel):
     images: List[SpotifyImage]
     albums: List[SpotifyAlbum]
     top_tracks: List[SpotifyTrack]
-
 
 @app.get("/artists/{artist_name}")
 async def get_artist(artist_name: str):
@@ -74,7 +70,6 @@ async def get_artist(artist_name: str):
         albums=albums,
         top_tracks=top_tracks
     )
-
 
     # Return artist information 
     return artist.dict() 
