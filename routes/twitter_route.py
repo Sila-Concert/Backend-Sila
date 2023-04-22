@@ -21,9 +21,9 @@ for i,tweet in enumerate(scraper.get_items()):
     break  
 tweet_df = pd.DataFrame(tweets, columns=['date','username','content','retweet','likecount','viewcount','reply'])
 tweet_df['content']
-print(tweet_df.dtypes)
+
 type(tweet_df)
-print(tweet_df)
+
 
 emoji = re.compile("["
                    u"\U0001F600-\U0001F64F"  
